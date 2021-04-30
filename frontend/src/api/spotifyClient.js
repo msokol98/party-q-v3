@@ -16,10 +16,6 @@ export const spotifyClient = {
             .get('me')
             .then(handleResponse)
             .catch(handleError);
-    },
-    logout: () => {
-        localStorage.removeItem('token');
-        window.location = "/";
     }
 };
 

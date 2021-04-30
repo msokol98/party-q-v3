@@ -2,6 +2,7 @@
 import { oauthURL } from 'config';
 import { useQuery } from 'react-query';
 
+import authClient from 'api/authClient';
 import spotifyClient from 'api/spotifyClient';
 import useToken from 'hooks/useToken';
 
@@ -22,7 +23,7 @@ const Landing = () => {
                 <div>
                     <h5>Hello {user.display_name}</h5>
                     <br />
-                    <Button onClick={spotifyClient.logout}>Logout with Spotify</Button>
+                    <Button onClick={authClient.logout}>Logout</Button>
                 </div>
             }
         </div>
