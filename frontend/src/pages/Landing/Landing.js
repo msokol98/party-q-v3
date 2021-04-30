@@ -29,8 +29,6 @@ const Landing = ({ hostParty, user }) => {
         sections = [...sections, ...sectionsWithNoParty];
     }
 
-    console.log(sections)
-
     return(
         <div className="section container content">
 

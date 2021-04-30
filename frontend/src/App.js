@@ -8,6 +8,8 @@ import Navbar from 'components/Navbar';
 import Party from 'pages/Party';
 import React from 'react';
 
+import WS from 'pages/WS';
+
 function App() {
 
   return (
@@ -18,6 +20,9 @@ function App() {
         <Router>
           <Route path='/' component={Landing} exact={true} />
           <Route path='/party' component={Party} exact={true} />
+
+          <Route path='/ws' component={WS} exact={true} />
+
         </Router>
       </div>
     </>
