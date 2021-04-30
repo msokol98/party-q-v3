@@ -23,4 +23,8 @@ public class Member {
     @JsonIgnore
     private Party party;
 
+    public boolean getInParty() {
+        return party != null;
+    }
+
 }

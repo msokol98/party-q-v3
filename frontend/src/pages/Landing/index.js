@@ -1,7 +1,5 @@
-import { useQuery } from 'react-query';
-
 import partyAdapter from 'api/partyAdapter';
-import spotifyClient from 'api/spotifyClient';
+import useCurrentUser from 'hooks/useCurrentUser';
 import useToken from 'hooks/useToken';
 
 import Landing from './Landing';
@@ -11,7 +9,7 @@ const LandingContainer = () => {
 
     useToken();
 
-    const { data: user } = useQuery('spotifyUser', () => spotifyClient.getUser());
+    const { user } = useCurrentUser();
 
     const hostParty = () => {
         partyAdapter.create({}).then(() => window.location = '/party');

@@ -14,7 +14,7 @@ function App() {
     <>
       <Navbar />
       
-      <div className="has-background-light app">
+      <div className="has-background-dark app">
         <Router>
           <Route path='/' component={Landing} exact={true} />
           <Route path='/party' component={Party} exact={true} />
