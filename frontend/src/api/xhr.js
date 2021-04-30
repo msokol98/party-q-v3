@@ -5,6 +5,7 @@ import axios from 'axios';
 function getApiClient(config) {
     return axios.create({
         baseURL: apiHost,
+        headers: {'Authorization': `Bearer ${localStorage.getItem('token')}`},
         ...config
     });
 }

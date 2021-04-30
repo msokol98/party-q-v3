@@ -7,7 +7,13 @@ import App from './App';
 import React from 'react';
 import ReactDOM from 'react-dom';
 
-const queryClient = new QueryClient();
+const queryClient = new QueryClient({
+  defaultOptions: {
+    queries: {
+      retry: false
+    },
+  }
+});
 
 ReactDOM.render(
   <React.StrictMode>

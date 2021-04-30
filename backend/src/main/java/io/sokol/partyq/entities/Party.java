@@ -3,6 +3,7 @@ package io.sokol.partyq.entities;
 import lombok.Data;
 
 import javax.persistence.*;
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
 
@@ -18,26 +19,28 @@ public class Party {
     private String accessCode;
 
     @OneToMany
-    private List<Member> members;
+    private List<Member> members = new ArrayList<>();
 
     @OneToMany
-    private List<Song> queue;
+    private List<Song> queue = new ArrayList<>();
 
     private int currentSongIndex;
 
-    private List<Member> getMembers() {
+    public List<Member> getMembers() {
         return members;
     }
 
-    private void addMember(Member member) {
+    public void addMember(Member member) {
         members.add(member);
     }
 
-    private List<Song> getQueue() {
+    public void removeMember(Member member) { members.remove(member); }
+
+    public List<Song> getQueue() {
         return queue;
     }
 
-    private void addSong(Song song) {
+    public void addSong(Song song) {
         queue.add(song);
     }
 

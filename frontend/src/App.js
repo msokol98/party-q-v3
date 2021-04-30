@@ -5,6 +5,7 @@ import { BrowserRouter as Router, Route } from 'react-router-dom';
 
 import Landing from 'pages/Landing';
 import Navbar from 'components/Navbar';
+import Party from 'pages/Party';
 import React from 'react';
 
 function App() {
@@ -15,7 +16,8 @@ function App() {
       
       <div className="has-background-light app">
         <Router>
-          <Route path='/' component={Landing} />
+          <Route path='/' component={Landing} exact={true} />
+          <Route path='/party' component={Party} exact={true} />
         </Router>
       </div>
     </>
